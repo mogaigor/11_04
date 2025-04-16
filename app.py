@@ -8,10 +8,13 @@ lista = [6,8,9,12,5]
 def s():
     return render_template("index.html",fat = fat,lista = lista)
 
-@app.route("/profilo")
-def profilo():
 
-    return "questa è la pagina profilo"
+@app.route('/aggiungi', methods=['POST'])
+def aggiungi():
+    elemento = request.form['elemento']
+    if elemento:
+        lista.append(elemento)
+    return redirect(url_for('s'))
 
 if __name__ == '__main__':
     app.run(debug=True) #aggiornamenti in tempo reale

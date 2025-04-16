@@ -19,5 +19,10 @@
     {% else %}   
         <p>non c'è niente</p>
     {% endif %}
+    <h1>Inserisci qualcosa</h1>
+    <form action="/aggiungi" method="post">
+        <input type="text" name="elemento" placeholder="Aggiungi un elemento"required>
+        <button type="submit">Aggiungi</button>
+    </form>
 </body>
 </html>
